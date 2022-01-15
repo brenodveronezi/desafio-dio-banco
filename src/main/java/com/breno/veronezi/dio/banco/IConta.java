@@ -8,5 +8,7 @@ public interface IConta {
 
     void transferir(double valor, Conta contaDestino);
 
+    void investir(double valor, String Moeda);
+
     void imprimirExtrato();
 }

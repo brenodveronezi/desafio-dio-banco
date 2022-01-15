@@ -11,6 +11,8 @@ public abstract class Conta implements IConta{
     protected int agencia;
     protected int numero;
     protected double saldo;
+    protected double investimento;
+    protected String moeda;
     protected Cliente cliente;
 
     public Conta(Cliente cliente){
@@ -35,24 +37,19 @@ public abstract class Conta implements IConta{
         contaDestino.depositar(valor);
     }
 
-    /*
-    public int getAgencia() {
-        return agencia;
+
+    public void investir(double valor, String Moeda){
+        investimento += valor;
+        moeda = Moeda;
     }
 
-    public int getNumero() {
-        return numero;
-    }
-
-    public double getSaldo() {
-        return saldo;
-    }
-     */
 
     protected void imprimirInfoComuns() {
         System.out.println(String.format("Titular: %s", this.cliente.getNome()));
         System.out.println(String.format("Agencia: %d", this.agencia));
         System.out.println(String.format("Conta: %d", this.numero));
         System.out.println(String.format("Saldo: %.2f", this.saldo));
+        System.out.println(String.format("Investido: %.2f em %s", this.investimento, this.moeda));
+
     }
 }
